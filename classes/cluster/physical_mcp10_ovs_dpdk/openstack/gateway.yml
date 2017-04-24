@@ -8,7 +8,6 @@ parameters:
   _param:
     interface_mtu: 1500
     cluster_vip_address: ${_param:openstack_control_address}
-
     linux_system_codename: xenial
     keepalived_vip_interface: br_ctl
     keepalived_vip_virtual_router_id: 69

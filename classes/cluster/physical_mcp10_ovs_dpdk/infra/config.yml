@@ -48,6 +48,12 @@ parameters:
             keepalived_vip_priority: 102
             linux_system_codename: xenial
             deploy_nic: enp11s0f0
+        openstack_gateway_node01:
+          params:
+            deploy_address: ${_param:openstack_gateway_node01_deploy_address}
+        openstack_gateway_node02:
+          params:
+            deploy_address: ${_param:openstack_gateway_node02_deploy_address}
         openstack_telemetry_node01:
           params:
             linux_system_codename: xenial
