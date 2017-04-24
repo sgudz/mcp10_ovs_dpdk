@@ -42,10 +42,12 @@ parameters:
           params:
             keepalived_vip_priority: 101
             linux_system_codename: xenial
+            deploy_nic: enp9s0f0
         infra_kvm_node03:
           params:
             keepalived_vip_priority: 102
             linux_system_codename: xenial
+            deploy_nic: enp11s0f0
         openstack_telemetry_node01:
           params:
             linux_system_codename: xenial
