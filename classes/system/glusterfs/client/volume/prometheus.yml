@@ -1,0 +1,10 @@
+parameters:
+  _param:
+    prometheus_glusterfs_service_host: ${_param:glusterfs_service_host}
+  glusterfs:
+    client:
+      volumes:
+        prometheus:
+          path: /srv/volumes/prometheus
+          server: ${_param:prometheus_glusterfs_service_host}
+          opts: 'defaults'

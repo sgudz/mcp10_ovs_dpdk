@@ -1,0 +1,12 @@
+parameters:
+  _param:
+    keystone_glusterfs_service_host: ${_param:glusterfs_service_host}
+  glusterfs:
+    client:
+      volumes:
+        keystone-keys:
+          path: /var/lib/keystone/fernet-keys
+          server: ${_param:keystone_glusterfs_service_host}
+          user: keystone
+          group: keystone
+          opts: "defaults,backup-volfile-servers=${_param:cluster_node01_address}:${_param:cluster_node02_address}:${_param:cluster_node03_address}"

@@ -1,0 +1,8 @@
+parameters:
+  server:
+    target:
+      kubernetes:
+        api_ip: ${_param:kubernetes_control_address}
+        ssl_dir: /opt/prometheus/config
+        cert_name: kubelet-client.crt
+        key_name: kubelet-client.key
