@@ -113,13 +113,6 @@ parameters:
           type: eth
           proto: manual
           name: ${_param:deploy_nic}
-        eth2.1801:
-          name: ${_param:deploy_nic}.1801
-          enabled: true
-          proto: manual
-          type: vlan
-          use_interfaces:
-          - ${_param:deploy_nic}
         br_mgm:
           enabled: true
           proto: static
@@ -131,7 +124,7 @@ parameters:
           - 8.8.8.8
           - 8.8.4.4
           use_interfaces:
-          - ${_param:deploy_nic}.1801
+          - bond0.1801
         bond0:
           enabled: true
           proto: manual
@@ -141,6 +134,12 @@ parameters:
           slaves: ${_param:primary_first_nic}
           mode: active-backup
         bond0.1802:
+          enabled: true
+          proto: manual
+          type: vlan
+          use_interfaces:
+          - bond0
+        bond0.1801:
           enabled: true
           proto: manual
           type: vlan
