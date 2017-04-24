@@ -25,8 +25,9 @@ parameters:
     cluster_node03_address: ${_param:infra_kvm_node03_address}
     keepalived_vip_interface: br_ctl
     keepalived_vip_virtual_router_id: 69
-    deploy_nic: eno1
-    primary_first_nic: eno2
+    deploy_nic: enp10s0f1
+    primary_first_nic: ens11f0
+    primary_second_nic: ens11f1
   salt:
     control:
       size: #RAM 4096,8192,16384,32768,65536
@@ -95,29 +96,42 @@ parameters:
   linux:
     network:
       interface:
-        eth1:
+        eth0:
           enabled: true
           type: slave
           proto: manual
           name: ${_param:primary_first_nic}
+          master: bond0
+        eth1:
+          enabled: true
+          type: slave
+          proto: manual
+          name: ${_param:primary_second_nic}
           master: bond0
         eth2:
           enabled: true
           type: eth
           proto: manual
           name: ${_param:deploy_nic}
+        eth2.1801:
+          name: ${_param:deploy_nic}.1801
+          enabled: true
+          proto: manual
+          type: vlan
+          use_interfaces:
+          - ${_param:deploy_nic}
         br_mgm:
           enabled: true
           proto: static
           type: bridge
           address: ${_param:deploy_address}
           netmask: 255.255.255.192
-          gateway: 172.16.49.1
+          gateway: 172.16.55.193
           name_servers:
           - 8.8.8.8
           - 8.8.4.4
           use_interfaces:
-          - ${_param:deploy_nic}
+          - ${_param:deploy_nic}.1801
         bond0:
           enabled: true
           proto: manual
@@ -126,7 +140,7 @@ parameters:
           - ${_param:primary_first_nic}
           slaves: ${_param:primary_first_nic}
           mode: active-backup
-        bond0.2416:
+        bond0.1802:
           enabled: true
           proto: manual
           type: vlan
@@ -139,7 +153,7 @@ parameters:
           address: ${_param:single_address}
           netmask: 255.255.255.0
           use_interfaces:
-          - bond0.2416
+          - bond0.1802
     system:
       package:
         linux-image-4.8.0-39-generic:
