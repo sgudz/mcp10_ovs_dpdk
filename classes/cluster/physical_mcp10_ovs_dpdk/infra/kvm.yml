@@ -25,7 +25,7 @@ parameters:
     cluster_node03_address: ${_param:infra_kvm_node03_address}
     keepalived_vip_interface: br_ctl
     keepalived_vip_virtual_router_id: 69
-    deploy_nic: enp10s0f1
+    deploy_nic: enp10s0f0
     primary_first_nic: ens11f0
     primary_second_nic: ens11f1
   salt:
@@ -113,6 +113,13 @@ parameters:
           type: eth
           proto: manual
           name: ${_param:deploy_nic}
+        eth2.1801:
+          name: ${_param:deploy_nic}.1801
+          enabled: true
+          proto: manual
+          type: vlan
+          use_interfaces:
+          - ${_param:deploy_nic}
         br_mgm:
           enabled: true
           proto: static
@@ -124,7 +131,7 @@ parameters:
           - 8.8.8.8
           - 8.8.4.4
           use_interfaces:
-          - bond0.1801
+          - ${_param:deploy_nic}.1801
         bond0:
           enabled: true
           proto: manual
@@ -134,12 +141,6 @@ parameters:
           slaves: ${_param:primary_first_nic}
           mode: active-backup
         bond0.1802:
-          enabled: true
-          proto: manual
-          type: vlan
-          use_interfaces:
-          - bond0
-        bond0.1801:
           enabled: true
           proto: manual
           type: vlan
