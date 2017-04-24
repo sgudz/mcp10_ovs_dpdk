@@ -20,7 +20,7 @@ parameters:
     cluster_node03_hostname: ctl03
     cluster_node03_address: ${_param:openstack_control_node03_address}
     nova_vncproxy_url: https://${_param:openstack_proxy_address}:6080
-    primary_first_bond0_nic: eth0
+    primary_first_bond0_nic: ens3f0
     primary_second_bond0_nic: eth1
     linux_system_codename: xenial
   neutron:
