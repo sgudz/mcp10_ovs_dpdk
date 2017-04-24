@@ -1,0 +1,34 @@
+classes:
+- system.linux.system.repo.mcp.openstack
+- system.linux.system.repo.mcp.extra
+- system.linux.system.repo.saltstack.trusty
+- system.linux.system.repo.ubuntu
+- system.nginx.server.single
+- system.nginx.server.proxy.openstack_api
+- system.nginx.server.proxy.openstack_vnc
+- system.nginx.server.proxy.openstack_web
+- system.horizon.server.single
+- system.salt.minion.cert.proxy
+- system.sphinx.server.doc.reclass
+- service.keepalived.cluster.single
+- cluster.physical_mcp10_ovs_dpdk
+- cluster.physical_mcp10_ovs_dpdk.openstack.dashboard
+- cluster.physical_mcp10_ovs_dpdk.stacklight.proxy
+parameters:
+  _param:
+    keepalived_vip_interface: eth1
+    keepalived_vip_virtual_router_id: 240
+    nginx_proxy_ssl:
+      enabled: true
+      authority: ${_param:salt_minion_ca_authority}
+      engine: salt
+      mode: secure
+    cluster_vip_address: ${_param:openstack_proxy_address}
+    salt_minion_ca_host: cfg01.${_param:cluster_domain}
+  linux:
+    network:
+      interface:
+        eth1: ${_param:linux_single_interface}
+    system:
+      package:
+        libapache2-mod-wsgi:

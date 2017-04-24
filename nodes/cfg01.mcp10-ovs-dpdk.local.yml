@@ -1,0 +1,10 @@
+classes:
+- cluster.physical_mcp10_ovs_dpdk.infra.config
+parameters:
+  _param:
+    linux_system_codename: xenial
+    reclass_data_revision: master
+  linux:
+    system:
+      name: cfg01
+      domain: mcp10-ovs-dpdk.local

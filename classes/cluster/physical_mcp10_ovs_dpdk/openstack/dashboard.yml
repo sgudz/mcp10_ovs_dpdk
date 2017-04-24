@@ -1,0 +1,10 @@
+classes:
+- system.horizon.server.single
+- cluster.physical_mcp10_ovs_dpdk
+parameters:
+  _param:
+    horizon_site_branding: OpenStack Dashboard
+  linux:
+    network:
+      interface:
+        eth1: ${_param:linux_single_interface}
