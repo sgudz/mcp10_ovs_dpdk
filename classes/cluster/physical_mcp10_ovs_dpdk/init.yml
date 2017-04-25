@@ -142,8 +142,8 @@ parameters:
     stacklight_telemetry_node03_hostname: mtr03
 
     # openstack compute
-    openstack_compute_node01_hostname: cmp001
-    openstack_compute_node02_hostname: cmp002
+    openstack_compute_node01_hostname: cmp01
+    openstack_compute_node02_hostname: cmp02
 
     ##CI/CD
     #infra_integration_node01_single_address:

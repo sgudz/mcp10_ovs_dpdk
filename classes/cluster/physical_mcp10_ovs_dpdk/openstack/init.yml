@@ -189,12 +189,12 @@ parameters:
           names:
           - ${_param:openstack_telemetry_node03_hostname}
           - ${_param:openstack_telemetry_node03_hostname}.${_param:cluster_domain}
-        cmp001:
+        cmp01:
           address: ${_param:openstack_compute_node01_control_address}
           names:
           - ${_param:openstack_compute_node01_hostname}
           - ${_param:openstack_compute_node01_hostname}.${_param:cluster_domain}
-        cmp002:
+        cmp02:
           address: ${_param:openstack_compute_node02_control_address}
           names:
           - ${_param:openstack_compute_node02_hostname}
