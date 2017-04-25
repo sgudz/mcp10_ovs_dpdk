@@ -1,22 +1,35 @@
 parameters:
- linux:
-   system:
-     user:
-       squdz:
-         enabled: true
-         name: squdz
-         sudo: true
-         full_name: Sergii Gudz
-         home: /home/squdz
- openssh:
-   server:
-     enabled: true
-     user:
-       squdz:
-         enabled: true
-         public_keys:
-         - ${public_keys:squdz}
-         user: ${linux:system:user:squdz}
- public_keys:
-   squdz:
-     key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1pRe3qQ8NvXNcfa1CHr5Mox2zuS/Wkl8cUaNlUUHUNbIwMnbnmMcHYfSH/uDD+SJSpxpD5ob2C5Z7sjXn3VMymyu+S9srNF99oRSPAW6caJ4b/+VGte1WRyTGr+yhGe9zjk6Qmpxdq6evOd8Yhqh+1r6SKBwmIhnx7u8SAKNxejRJUbx8hQ4LrHlr2B0IXF6Trz2JxRXdpo8ryphwzb9EQnfMFjbcvsOL5TTCk9eWeeWVf1Uy13pQZfXP1xlBcwK6p5OWTMCsOb6Y8h1RXn+nGmzr5fke8Nx1V+ehCyGZMX32hBnlXl/4U/Pd8Fj/28lvgvU3iIJ1uEGI2ulGN8mz sgudz@serg
+  linux:
+    system:
+      user:
+        squdz:
+          enabled: true
+          name: squdz
+          sudo: true
+          full_name: Sergii Gudz
+          home: /home/squdz
+        vskybin:
+          enabled: true
+          name: vskybin
+          sudo: true
+          full_name: Vladyslav Skybin
+          home: /home/vskybin
+  openssh:
+    server:
+      enabled: true
+      user:
+        squdz:
+          enabled: true
+          public_keys:
+          - ${public_keys:squdz}
+          user: ${linux:system:user:squdz}
+       vskybin:
+          enabled: true
+          public_keys:
+          - ${public_keys:vskybin}
+          user: ${linux:system:user:vskybin}
+  public_keys:
+    squdz:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1pRe3qQ8NvXNcfa1CHr5Mox2zuS/Wkl8cUaNlUUHUNbIwMnbnmMcHYfSH/uDD+SJSpxpD5ob2C5Z7sjXn3VMymyu+S9srNF99oRSPAW6caJ4b/+VGte1WRyTGr+yhGe9zjk6Qmpxdq6evOd8Yhqh+1r6SKBwmIhnx7u8SAKNxejRJUbx8hQ4LrHlr2B0IXF6Trz2JxRXdpo8ryphwzb9EQnfMFjbcvsOL5TTCk9eWeeWVf1Uy13pQZfXP1xlBcwK6p5OWTMCsOb6Y8h1RXn+nGmzr5fke8Nx1V+ehCyGZMX32hBnlXl/4U/Pd8Fj/28lvgvU3iIJ1uEGI2ulGN8mz sgudz@serg
+    vskybin:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDS5Q8LXPFpT/vylnyg4M7mU0Rqfn7xnpj14hTE5HhQRIX4c+EObNOgiG5mOlocF5o4SjkXaQ4mgke2t4b6mm9ZP4Ywk4NfDY4XgWMbQfjiYFii/BUp4zsBone71Ga5yeg4+MMK02U8GMnhVi5J1dlHSk4w3M50Hsl7bBbv1cu9t9u1D+S1ZD/C+Mr5TRCqC4Jl0pcVR8EilUbnhYMCfhMVjw+gU3Ml9kc0q0uYM3B3HrR1/8GzDeIWu3aTTozUhBVH8C1e6Jqicb7sp4y+JbOjJdl2hvG/0A0FntBFJdKX2Kzq3LfR3M+ayCXtnIcPnc6T/diXmPMRtm34TDbvGi2n vskybin@vskybin-pc
