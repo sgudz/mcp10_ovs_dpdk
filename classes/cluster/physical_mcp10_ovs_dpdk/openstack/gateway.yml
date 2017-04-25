@@ -69,5 +69,6 @@ parameters:
           bridge: br-floating
           proto: static
           ovs_options: tag=1801
+          gateway: 172.16.55.193
           address: ${_param:deploy_address}
           netmask: 255.255.248.0
