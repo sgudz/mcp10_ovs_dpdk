@@ -140,7 +140,7 @@ parameters:
           - ${_param:primary_first_nic}
           slaves: ${_param:primary_first_nic}
           mode: active-backup
-        bond0.1802:
+        bond0.1806:
           enabled: true
           proto: manual
           type: vlan
@@ -153,7 +153,7 @@ parameters:
           address: ${_param:single_address}
           netmask: 255.255.255.0
           use_interfaces:
-          - bond0.1802
+          - bond0.1806
     system:
       package:
         linux-image-4.8.0-39-generic:
