@@ -36,8 +36,6 @@ parameters:
           params:
             keepalived_vip_priority: 100
             linux_system_codename: xenial
-            #deploy_nic: enp3s0f0
-            #primary_first_nic: enp3s0f1
         infra_kvm_node02:
           params:
             keepalived_vip_priority: 101
@@ -90,12 +88,8 @@ parameters:
             control_address: ${_param:openstack_compute_node01_control_address}
             single_address: ${_param:openstack_compute_node01_single_address}
             tenant_address: ${_param:openstack_compute_node01_tenant_address}
-            dpdk0_name: enp5s0f1
-            dpdk1_name: enp5s0f2
-            dpdk0_pci: '"0000:05:00.1"'
-            dpdk1_pci: '"0000:05:00.2"'
-            primary_first_bond1_nic: enp5s0f1
-            primary_second_bond1_nic: enp5s0f2
+            dpdk0_pci: '"0000:81:00.0"'
+            dpdk1_pci: '"0000:81:00.1"'
         openstack_compute_node02:
           name: ${_param:openstack_compute_node02_hostname}
           domain: ${_param:cluster_domain}
@@ -107,9 +101,5 @@ parameters:
             control_address: ${_param:openstack_compute_node02_control_address}
             single_address: ${_param:openstack_compute_node02_single_address}
             tenant_address: ${_param:openstack_compute_node02_tenant_address}
-            dpdk0_name: eth2
-            dpdk1_name: eth4
-            dpdk0_pci: '"0000:05:00.1"'
-            dpdk1_pci: '"0000:0b:00.0"'
-            primary_first_bond1_nic: eth2
-            primary_second_bond1_nic: eth4
+            dpdk0_pci: '"0000:81:00.0"'
+            dpdk1_pci: '"0000:81:00.1"'

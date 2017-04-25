@@ -20,8 +20,8 @@ parameters:
     cluster_node03_hostname: ctl03
     cluster_node03_address: ${_param:openstack_control_node03_address}
     nova_vncproxy_url: https://${_param:openstack_proxy_address}:6080
-    primary_first_bond0_nic: ens3f0
-    primary_second_bond0_nic: eth1
+    dpdk0_name: ens11f0
+    dpdk1_name: ens11f1
     linux_system_codename: xenial
   neutron:
     compute:
@@ -54,7 +54,7 @@ parameters:
         br-prv:
           enabled: true
           type: dpdk_ovs_bridge
-        bond0.2416:
+        bond0.1806:
           enabled: true
           proto: manual
           type: vlan
@@ -67,4 +67,4 @@ parameters:
           address: ${_param:control_address}
           netmask: 255.255.255.0
           use_interfaces:
-          - bond0.2416
+          - bond0.1806

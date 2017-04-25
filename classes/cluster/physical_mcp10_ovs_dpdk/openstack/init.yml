@@ -14,7 +14,7 @@ parameters:
     neutron_compute_dvr: False
     neutron_compute_agent_mode: legacy
     neutron_compute_external_access: False
-    neutron_tenant_vlan_range: "2416:2420"
+    neutron_tenant_vlan_range: "1806:1819"
     nova_cpu_pinning: "1,2,3,4,5,7,8,9,10,11"
     compute_hugepages_size: 1G
     compute_hugepages_count: 16
