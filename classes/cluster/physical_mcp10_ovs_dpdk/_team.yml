@@ -1,22 +1,22 @@
-#parameters:
-#  linux:
-#    system:
-#      user:
-#        smatov:
-#          enabled: true
-#          name: smatov
-#          sudo: true
-#          full_name: Sergey Matov
-#          home: /home/smatov
-#  openssh:
-#    server:
-#      enabled: true
-#      user:
-#        smatov:
-#          enabled: true
-#          public_keys:
-#          - ${public_keys:smatov}
-#          user: ${linux:system:user:smatov}
-#  public_keys:
-#    smatov:
-#      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDgBHACRnY/VEEDFE63xDp4bx0zgWY4h1aB9/c2f962HtTNaQ6R/Cz6DLISaB5th8qzrzbvjn9WcpHdxyTm9BqkLLzB4qe7fnebPtn6zGczZ9Btrjk9R8Fuw6DZhSucSk572r/gVIY0O3Z1LajHkNr0ZTQS8AY3fgn8rXMD2vMOruOzyTOmfWKmEw7e+JYUqoFXHhE3Dd7hGQ99d6kH2N3zXfM2rzfjshGAq0kOi5dN4Hx6QIXZapt0t9TzpYTkK5SaVzuEVyVaKRLYSa/rdPjHkKqDFa99RcQ+OI93uvT9CFNWDFIC/TDJ2M+7PQbm836EICXXVWKjQ2NUnQJeOU5v smatov@ubuntu
+parameters:
+ linux:
+   system:
+     user:
+       squdz:
+         enabled: true
+         name: squdz
+         sudo: true
+         full_name: Sergii Gudz
+         home: /home/squdz
+ openssh:
+   server:
+     enabled: true
+     user:
+       squdz:
+         enabled: true
+         public_keys:
+         - ${public_keys:squdz}
+         user: ${linux:system:user:squdz}
+ public_keys:
+   squdz:
+     key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1pRe3qQ8NvXNcfa1CHr5Mox2zuS/Wkl8cUaNlUUHUNbIwMnbnmMcHYfSH/uDD+SJSpxpD5ob2C5Z7sjXn3VMymyu+S9srNF99oRSPAW6caJ4b/+VGte1WRyTGr+yhGe9zjk6Qmpxdq6evOd8Yhqh+1r6SKBwmIhnx7u8SAKNxejRJUbx8hQ4LrHlr2B0IXF6Trz2JxRXdpo8ryphwzb9EQnfMFjbcvsOL5TTCk9eWeeWVf1Uy13pQZfXP1xlBcwK6p5OWTMCsOb6Y8h1RXn+nGmzr5fke8Nx1V+ehCyGZMX32hBnlXl/4U/Pd8Fj/28lvgvU3iIJ1uEGI2ulGN8mz sgudz@serg
