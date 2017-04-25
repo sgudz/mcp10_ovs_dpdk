@@ -24,10 +24,10 @@ parameters:
           - ${public_keys:squdz}
           user: ${linux:system:user:squdz}
         vskybin:
-           enabled: true
-           public_keys:
-           - ${public_keys:vskybin}
-           user: ${linux:system:user:vskybin}
+          enabled: true
+          public_keys:
+          - ${public_keys:vskybin}
+          user: ${linux:system:user:vskybin}
   public_keys:
     squdz:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1pRe3qQ8NvXNcfa1CHr5Mox2zuS/Wkl8cUaNlUUHUNbIwMnbnmMcHYfSH/uDD+SJSpxpD5ob2C5Z7sjXn3VMymyu+S9srNF99oRSPAW6caJ4b/+VGte1WRyTGr+yhGe9zjk6Qmpxdq6evOd8Yhqh+1r6SKBwmIhnx7u8SAKNxejRJUbx8hQ4LrHlr2B0IXF6Trz2JxRXdpo8ryphwzb9EQnfMFjbcvsOL5TTCk9eWeeWVf1Uy13pQZfXP1xlBcwK6p5OWTMCsOb6Y8h1RXn+nGmzr5fke8Nx1V+ehCyGZMX32hBnlXl/4U/Pd8Fj/28lvgvU3iIJ1uEGI2ulGN8mz sgudz@serg
