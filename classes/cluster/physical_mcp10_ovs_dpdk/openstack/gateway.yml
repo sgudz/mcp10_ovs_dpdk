@@ -56,6 +56,7 @@ parameters:
           proto: static
           ovs_options: tag=1806
           address: ${_param:single_address}
+          netmask: 255.255.255.0
         br_gtw:
           enabled: true
           type: ovs_port
@@ -63,7 +64,7 @@ parameters:
           proto: static
           ovs_options: tag=1801
           address: ${_param:deploy_address}
-          netmask: 255.255.255.0
+          netmask: 255.255.255.192
         floating-to-prv:
           enabled: true
           type: ovs_port
