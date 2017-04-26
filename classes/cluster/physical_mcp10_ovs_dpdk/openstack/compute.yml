@@ -24,6 +24,8 @@ parameters:
     dpdk1_name: ens11f1
     linux_system_codename: xenial
     ovs_dpdk_socket_mem: ${_param:compute_ovs_dpdk_socket_mem}
+    ovs_pmd_cpu_mask: ${_param:compute_ovs_pmd_cpu_mask}
+    ovs_dpdk_lcore_mask: ${_param:compute_ovs_dpdk_lcore_mask}
   neutron:
     compute:
       backend:
