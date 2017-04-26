@@ -23,6 +23,7 @@ parameters:
     dpdk0_name: ens11f0
     dpdk1_name: ens11f1
     linux_system_codename: xenial
+    ovs_dpdk_socket_mem: ${_param:compute_ovs_dpdk_socket_mem}
   neutron:
     compute:
       backend:
@@ -68,3 +69,5 @@ parameters:
           netmask: 255.255.255.0
           use_interfaces:
           - bond0.1806
+      openvswitch:
+        dpdk_socket_mem: "${_param:ovs_dpdk_socket_mem}"
