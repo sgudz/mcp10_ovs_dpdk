@@ -104,5 +104,5 @@ parameters:
             dpdk0_pci: '"0000:81:00.0"'
             dpdk1_pci: '"0000:81:00.1"'
             ovs_dpdk_socket_mem: "0,1024,1024,0"
-            ovs_pmd_cpu_mask: 0x3C00
+            ovs_pmd_cpu_mask: "'0x3C00'"
             ovs_dpdk_lcore_mask: "'0x40000000'"
