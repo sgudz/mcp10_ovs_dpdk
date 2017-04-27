@@ -5,7 +5,7 @@ classes:
 #- system.ceilometer.server.backend.influxdb
 - system.heka.ceilometer_collector.single
 - system.ceilometer.server.cluster
-- system.aodh.server.cluster
+#- system.aodh.server.cluster
 - cluster.physical_mcp10_ovs_dpdk
 parameters:
   _param:
