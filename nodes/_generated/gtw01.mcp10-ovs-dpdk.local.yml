@@ -1,0 +1,15 @@
+classes:
+- cluster.physical_mcp10_ovs_dpdk.openstack.gateway
+parameters:
+  _param:
+    deploy_address: 172.16.55.196
+    linux_system_codename: xenial
+    salt_master_host: 172.16.52.117
+    single_address: 10.167.4.224
+    tenant_address: 10.167.6.6
+  linux:
+    system:
+      name: gtw01
+      domain: mcp10-ovs-dpdk.local
+      cluster: default
+      environment: prd

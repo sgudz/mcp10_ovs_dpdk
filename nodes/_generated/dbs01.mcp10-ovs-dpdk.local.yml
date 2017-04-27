@@ -1,0 +1,17 @@
+classes:
+- service.galera.master.cluster
+- cluster.physical_mcp10_ovs_dpdk.openstack.database
+- cluster.physical_mcp10_ovs_dpdk.openstack.database_init
+parameters:
+  _param:
+    keepalived_vip_priority: 103
+    linux_system_codename: trusty
+    mysql_cluster_role: master
+    salt_master_host: 172.16.52.117
+    single_address: 10.167.4.51
+  linux:
+    system:
+      name: dbs01
+      domain: mcp10-ovs-dpdk.local
+      cluster: default
+      environment: prd

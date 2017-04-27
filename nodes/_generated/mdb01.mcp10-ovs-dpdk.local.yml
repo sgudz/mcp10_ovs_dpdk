@@ -1,0 +1,14 @@
+classes:
+- cluster.physical_mcp10_ovs_dpdk.openstack.telemetry
+parameters:
+  _param:
+    keepalived_vip_priority: 100
+    linux_system_codename: xenial
+    salt_master_host: 172.16.52.117
+    single_address: 10.167.4.76
+  linux:
+    system:
+      name: mdb01
+      domain: mcp10-ovs-dpdk.local
+      cluster: default
+      environment: prd

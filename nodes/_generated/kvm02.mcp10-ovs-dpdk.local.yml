@@ -1,0 +1,18 @@
+classes:
+- cluster.physical_mcp10_ovs_dpdk.infra.kvm
+parameters:
+  _param:
+    deploy_address: 172.16.55.198
+    deploy_nic: enp9s0f0
+    keepalived_vip_priority: 101
+    linux_system_codename: xenial
+    public_address: 10.167.4.242
+    salt_master_host: 172.16.52.117
+    single_address: 10.167.4.242
+    storage_address: 10.167.4.242
+  linux:
+    system:
+      name: kvm02
+      domain: mcp10-ovs-dpdk.local
+      cluster: default
+      environment: prd
