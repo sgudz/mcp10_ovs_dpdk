@@ -13,7 +13,7 @@ classes:
 - service.keepalived.cluster.single
 - cluster.physical_mcp10_ovs_dpdk
 - cluster.physical_mcp10_ovs_dpdk.openstack.dashboard
-- cluster.physical_mcp10_ovs_dpdk.stacklight.proxy
+#- cluster.physical_mcp10_ovs_dpdk.stacklight.proxy
 parameters:
   _param:
     keepalived_vip_interface: eth1
