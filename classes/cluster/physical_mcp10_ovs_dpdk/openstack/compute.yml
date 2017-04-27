@@ -1,3 +1,6 @@
+
+
+
 classes:
 - system.linux.system.repo.mcp.openstack
 - system.linux.system.repo.mcp.extra
@@ -22,6 +25,7 @@ parameters:
     nova_vncproxy_url: https://${_param:openstack_proxy_address}:6080
     dpdk0_name: ens11f0
     dpdk1_name: ens11f1
+    deploy_nic: ens3f0
     linux_system_codename: xenial
     ovs_dpdk_socket_mem: ${_param:compute_ovs_dpdk_socket_mem}
     ovs_pmd_cpu_mask: ${_param:compute_ovs_pmd_cpu_mask}
@@ -57,12 +61,12 @@ parameters:
         br-prv:
           enabled: true
           type: dpdk_ovs_bridge
-        bond0.1806:
+        ${_param:deploy_nic}.1806:
           enabled: true
           proto: manual
           type: vlan
           use_interfaces:
-          - bond0
+          - ${_param:deploy_nic}
         br_ctl:
           enabled: true
           type: bridge
@@ -70,7 +74,7 @@ parameters:
           address: ${_param:control_address}
           netmask: 255.255.255.0
           use_interfaces:
-          - bond0.1806
+          - ${_param:deploy_nic}.1806
       openvswitch:
         pmd_cpu_mask: "${_param:ovs_pmd_cpu_mask}"
         dpdk_socket_mem: "${_param:ovs_dpdk_socket_mem}"
