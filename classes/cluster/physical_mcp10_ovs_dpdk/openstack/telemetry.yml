@@ -2,7 +2,7 @@ classes:
 - system.linux.system.repo.mcp.openstack
 - system.linux.system.repo.mcp.extra
 - system.linux.system.repo.saltstack.trusty
-- system.ceilometer.server.backend.influxdb
+#- system.ceilometer.server.backend.influxdb
 - system.heka.ceilometer_collector.single
 - system.ceilometer.server.cluster
 - system.aodh.server.cluster
