@@ -4,6 +4,7 @@ classes:
 - system.linux.system.single
 - system.openssh.server.team.lab
 - system.openssh.server.team.tcpcloud
+- system.openssh.server.team.networking
 - system.openssh.server.team.mcp_qa
 - cluster.physical_mcp10_ovs_dpdk._team
 - cluster.physical_mcp10_ovs_dpdk.infra
