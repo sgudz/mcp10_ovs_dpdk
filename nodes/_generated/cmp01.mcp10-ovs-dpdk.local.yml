@@ -1,0 +1,17 @@
+classes:
+- cluster.physical_mcp10_ovs_dpdk.openstack.compute
+parameters:
+  _param:
+    control_address: 10.167.4.101
+    dpdk0_pci: "0000:81:00.0"
+    dpdk1_pci: "0000:81:00.1"
+    linux_system_codename: xenial
+    salt_master_host: 172.16.52.117
+    single_address: 10.167.4.101
+    tenant_address: 10.167.6.101
+  linux:
+    system:
+      name: cmp01
+      domain: mcp10-ovs-dpdk.local
+      cluster: default
+      environment: prd

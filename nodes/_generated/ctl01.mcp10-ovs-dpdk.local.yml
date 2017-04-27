@@ -1,0 +1,17 @@
+classes:
+- cluster.physical_mcp10_ovs_dpdk.openstack.control
+- cluster.physical_mcp10_ovs_dpdk.openstack.control_init
+parameters:
+  _param:
+    keepalived_vip_priority: 103
+    linux_system_codename: trusty
+    opencontrail_database_id: 1
+    rabbitmq_cluster_role: master
+    salt_master_host: 172.16.52.117
+    single_address: 10.167.4.11
+  linux:
+    system:
+      name: ctl01
+      domain: mcp10-ovs-dpdk.local
+      cluster: default
+      environment: prd
