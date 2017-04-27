@@ -61,7 +61,8 @@ parameters:
         br-prv:
           enabled: true
           type: dpdk_ovs_bridge
-        ${_param:deploy_nic}.1806:
+        deploy_nic.1806:
+          name: ${_param:deploy_nic}.1806
           enabled: true
           proto: manual
           type: vlan
