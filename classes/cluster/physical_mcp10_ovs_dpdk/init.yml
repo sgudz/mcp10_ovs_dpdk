@@ -8,14 +8,14 @@ classes:
 - cluster.physical_mcp10_ovs_dpdk._team
 - cluster.physical_mcp10_ovs_dpdk.infra
 - cluster.physical_mcp10_ovs_dpdk.openstack
-- cluster.physical_mcp10_ovs_dpdk.stacklight
-- cluster.physical_mcp10_ovs_dpdk.stacklight.client
+#- cluster.physical_mcp10_ovs_dpdk.stacklight
+#- cluster.physical_mcp10_ovs_dpdk.stacklight.client
 parameters:
   _param:
     openstack_version: mitaka
     apt_mk_version: nightly
     cluster_domain: mcp10-ovs-dpdk.local
-    stacklight_environment: ${_param:cluster_domain}
+    #stacklight_environment: ${_param:cluster_domain}
     reclass_data_revision: master
     cluster_name: physical_mcp10_ovs_dpdk
     cluster_public_host: ${_param:openstack_proxy_address}
@@ -85,18 +85,18 @@ parameters:
     # openstack_billing_address:
 
     # Stacklight Monitor
-    stacklight_monitor_address: 10.167.4.70
-    stacklight_monitor_node01_address: 10.167.4.71
-    stacklight_monitor_node02_address: 10.167.4.72
-    stacklight_monitor_node03_address: 10.167.4.73
-    stacklight_log_address: 10.167.4.60
-    stacklight_log_node01_address: 10.167.4.61
-    stacklight_log_node02_address: 10.167.4.62
-    stacklight_log_node03_address: 10.167.4.63
-    stacklight_telemetry_address: 10.167.4.85
-    stacklight_telemetry_node01_address: 10.167.4.86
-    stacklight_telemetry_node02_address: 10.167.4.87
-    stacklight_telemetry_node03_address: 10.167.4.88
+    # stacklight_monitor_address: 10.167.4.70
+    # stacklight_monitor_node01_address: 10.167.4.71
+    # stacklight_monitor_node02_address: 10.167.4.72
+    # stacklight_monitor_node03_address: 10.167.4.73
+    # stacklight_log_address: 10.167.4.60
+    # stacklight_log_node01_address: 10.167.4.61
+    # stacklight_log_node02_address: 10.167.4.62
+    # stacklight_log_node03_address: 10.167.4.63
+    # stacklight_telemetry_address: 10.167.4.85
+    # stacklight_telemetry_node01_address: 10.167.4.86
+    # stacklight_telemetry_node02_address: 10.167.4.87
+    # stacklight_telemetry_node03_address: 10.167.4.88
 
     # OpenStack Compute
     openstack_compute_node01_single_address: 10.167.4.101
@@ -128,18 +128,18 @@ parameters:
     openstack_message_queue_node03_hostname: msg03
 
     # stacklight service hostnames
-    stacklight_monitor_hostname: mon
-    stacklight_monitor_node01_hostname: mon01
-    stacklight_monitor_node02_hostname: mon02
-    stacklight_monitor_node03_hostname: mon03
-    stacklight_log_hostname: log
-    stacklight_log_node01_hostname: log01
-    stacklight_log_node02_hostname: log02
-    stacklight_log_node03_hostname: log03
-    stacklight_telemetry_hostname: mtr
-    stacklight_telemetry_node01_hostname: mtr01
-    stacklight_telemetry_node02_hostname: mtr02
-    stacklight_telemetry_node03_hostname: mtr03
+    # stacklight_monitor_hostname: mon
+    # stacklight_monitor_node01_hostname: mon01
+    # stacklight_monitor_node02_hostname: mon02
+    # stacklight_monitor_node03_hostname: mon03
+    # stacklight_log_hostname: log
+    # stacklight_log_node01_hostname: log01
+    # stacklight_log_node02_hostname: log02
+    # stacklight_log_node03_hostname: log03
+    # stacklight_telemetry_hostname: mtr
+    # stacklight_telemetry_node01_hostname: mtr01
+    # stacklight_telemetry_node02_hostname: mtr02
+    # stacklight_telemetry_node03_hostname: mtr03
 
     # openstack compute
     openstack_compute_node01_hostname: cmp01
