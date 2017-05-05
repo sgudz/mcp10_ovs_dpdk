@@ -14,6 +14,12 @@ parameters:
           sudo: true
           full_name: Vladyslav Skybin
           home: /home/vskybin
+        mpolenchuk:
+          enabled: true
+          name: mpolenchuk
+          sudo: true
+          full_name: Michael Polenchuk
+          home: /home/mpolenchuk
   openssh:
     server:
       enabled: true
@@ -28,8 +34,15 @@ parameters:
           public_keys:
           - ${public_keys:vskybin}
           user: ${linux:system:user:vskybin}
+        mpolenchuk:
+          enabled: true
+          public_keys:
+          - ${public_keys:mpolenchuk}
+          user: ${linux:system:user:mpolenchuk}
   public_keys:
     sgudz:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1pRe3qQ8NvXNcfa1CHr5Mox2zuS/Wkl8cUaNlUUHUNbIwMnbnmMcHYfSH/uDD+SJSpxpD5ob2C5Z7sjXn3VMymyu+S9srNF99oRSPAW6caJ4b/+VGte1WRyTGr+yhGe9zjk6Qmpxdq6evOd8Yhqh+1r6SKBwmIhnx7u8SAKNxejRJUbx8hQ4LrHlr2B0IXF6Trz2JxRXdpo8ryphwzb9EQnfMFjbcvsOL5TTCk9eWeeWVf1Uy13pQZfXP1xlBcwK6p5OWTMCsOb6Y8h1RXn+nGmzr5fke8Nx1V+ehCyGZMX32hBnlXl/4U/Pd8Fj/28lvgvU3iIJ1uEGI2ulGN8mz sgudz@serg
     vskybin:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDS5Q8LXPFpT/vylnyg4M7mU0Rqfn7xnpj14hTE5HhQRIX4c+EObNOgiG5mOlocF5o4SjkXaQ4mgke2t4b6mm9ZP4Ywk4NfDY4XgWMbQfjiYFii/BUp4zsBone71Ga5yeg4+MMK02U8GMnhVi5J1dlHSk4w3M50Hsl7bBbv1cu9t9u1D+S1ZD/C+Mr5TRCqC4Jl0pcVR8EilUbnhYMCfhMVjw+gU3Ml9kc0q0uYM3B3HrR1/8GzDeIWu3aTTozUhBVH8C1e6Jqicb7sp4y+JbOjJdl2hvG/0A0FntBFJdKX2Kzq3LfR3M+ayCXtnIcPnc6T/diXmPMRtm34TDbvGi2n vskybin@vskybin-pc
+    mpolenchuk:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC18NFHig4QQPBgFY7s3MOzGRYHOFY6Fzu1lBSYoH6Ie6u2AY7aS149uSUHJPuzTQ5uEsxXqSlfOOggwrB7sOb1w+sCUhUJN5SyvPl1tnQ5mQ96DvMGtFwuTQwQJ5SY/XXIKCKn59G0AMyOmajDsHdeUFhwj1u8CWnEM7QHxuAxDxbExNyWe0yytsdbIelI1xsyX3qWNsJz/9BSnD6IKKtB0ca0lG+qWmO8eQ/A/pqE28E6kh25mqsEk38gTvBgJsaociU75WTEQYcxhVy4+/ZoZeW/ASDC+Raaq8b7gbrOo8EKdgpWk1MAdomfGfoxJ2HEVI08vLR3xBd0IjbC0NFN root@desktop
