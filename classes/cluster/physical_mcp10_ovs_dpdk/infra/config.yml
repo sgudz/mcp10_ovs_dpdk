@@ -67,6 +67,28 @@ parameters:
         openstack_control_node01:
           classes:
           - cluster.${_param:cluster_name}.openstack.control_init
+          parameters:
+            avinetworks:
+              server:
+                enabled: true
+                identity: cloud1
+                image_location: http://download.cirros-cloud.net/0.3.5/cirros-0.3.5-x86_64-disk.img
+                disk_format: qcow2
+                public_network: floating
+                saltmaster_ip: 172.16.52.117
+            keystone:
+              client:
+                enabled: true
+                server:
+                  cloud1:
+                    admin:
+                      host: 10.167.4.10 #${_param:keystone_service_host}
+                      port: 5000
+                      project: admin
+                      user: admin
+                      password: password
+                      protocol: http
+                      region_name: RegionOne
         openstack_database_node01:
           classes:
           - cluster.${_param:cluster_name}.openstack.database_init
@@ -96,6 +118,6 @@ parameters:
             tenant_address: ${_param:openstack_compute_node02_tenant_address}
             dpdk0_pci: '"0000:81:00.0"'
             dpdk1_pci: '"0000:81:00.1"'
-            ovs_dpdk_socket_mem: "0,1024,1024,0"
-            ovs_pmd_cpu_mask: "'0x3C00'"
+            ovs_dpdk_socket_mem: "1024,1024"
+            ovs_pmd_cpu_mask: "'0x780007c00'"
             ovs_dpdk_lcore_mask: "'0x40000000'"
