@@ -15,15 +15,15 @@ parameters:
     neutron_compute_agent_mode: legacy
     neutron_compute_external_access: False
     neutron_tenant_vlan_range: "1807:1819"
-    nova_cpu_pinning: "1,2,3,4,5,7,8,9,10,11"
+    nova_cpu_pinning: "15,35,16,36,17,37,18,38,19,39"
     compute_hugepages_size: 1G
-    compute_hugepages_count: 16
+    compute_hugepages_count: 64
     compute_hugepages_mount: /mnt/hugepages_1G
-    compute_kernel_isolcpu: ${_param:nova_cpu_pinning}
+    compute_kernel_isolcpu: 1,2,3,4,5,6,7,8,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,30,31,32,33,34,35,36,37,38,39
     compute_dpdk_driver: uio
-    compute_ovs_pmd_cpu_mask: "0x1e000"
+    compute_ovs_pmd_cpu_mask: "0x780007c00"
     compute_ovs_dpdk_socket_mem: "1024,1024"
-    compute_ovs_dpdk_lcore_mask: "0x1000"
+    compute_ovs_dpdk_lcore_mask: "0x40000000"
     compute_ovs_memory_channels: "2"
     galera_server_cluster_name: openstack_cluster
     galera_server_maintenance_password: password
