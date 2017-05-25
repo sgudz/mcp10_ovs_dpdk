@@ -8,6 +8,7 @@ classes:
 - system.glance.control.cluster
 - system.neutron.control.openvswitch.cluster
 - system.neutron.control.openvswitch.dpdk
+- system.neutron.control.openvswitch.sriov
 - system.nova.control.cluster
 - system.cinder.control.cluster
 - system.cinder.volume.single

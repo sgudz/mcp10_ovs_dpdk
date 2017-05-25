@@ -1,12 +1,11 @@
-
-
-
 classes:
 - system.linux.system.repo.mcp.openstack
 - system.linux.system.repo.mcp.extra
 - system.linux.system.repo.saltstack.xenial
 - system.nova.compute.nfv.hugepages
 - system.nova.compute.nfv.cpu_pinning
+- system.nova.compute.nfv.sriov
+- system.neutron.compute.nfv.sriov
 - system.neutron.compute.nfv.dpdk
 - system.nova.compute.cluster
 - system.neutron.compute.cluster
@@ -24,12 +23,14 @@ parameters:
     cluster_node03_address: ${_param:openstack_control_node03_address}
     nova_vncproxy_url: https://${_param:openstack_proxy_address}:6080
     dpdk0_name: ens11f0
-    dpdk1_name: ens11f1
+    #idpdk1_name: ens11f1
     deploy_nic: ens3f0
     linux_system_codename: xenial
     ovs_dpdk_socket_mem: ${_param:compute_ovs_dpdk_socket_mem}
     ovs_pmd_cpu_mask: ${_param:compute_ovs_pmd_cpu_mask}
     ovs_dpdk_lcore_mask: ${_param:compute_ovs_dpdk_lcore_mask}
+    sriov_nic01_device_name: ens11f1
+    sriov_nic01_numvfs: 7 
   neutron:
     compute:
       backend:
@@ -41,23 +42,28 @@ parameters:
           name: ${_param:dpdk0_name}
           pci: ${_param:dpdk0_pci}
           driver: igb_uio
-          bond: dpdkbond1
+          #bond: dpdkbond1
           enabled: true
           type: dpdk_ovs_port
-          n_rxq: 2
-        dpdk1:
-          name: ${_param:dpdk1_name}
-          pci: ${_param:dpdk1_pci}
-          driver: igb_uio
-          bond: dpdkbond1
+          n_rxq: "9"
+          pmd_rxq_affinity: "0:11,1:31,2:12,3:32,4:13,5:33,6:14,7:34,8:10"
+        sriov_nic01_device_name:
           enabled: true
-          type: dpdk_ovs_port
-          n_rxq: 2
-        dpdkbond1:
-          enabled: true
-          bridge: br-prv
-          type: dpdk_ovs_bond
-          mode: active-backup
+          type: eth
+        #dpdk1:
+        #  name: ${_param:dpdk1_name}
+        #  pci: ${_param:dpdk1_pci}
+        #  driver: igb_uio
+        #  bond: dpdkbond1
+        #  enabled: true
+        #  type: dpdk_ovs_port
+        #  n_rxq: "9"
+        #  pmd_rxq_affinity: "0:11,1:31,2:12,3:32,4:13,5:33,6:14,7:34,8:10"
+        #dpdkbond1:
+        #  enabled: true
+        #  bridge: br-prv
+        #  type: dpdk_ovs_bond
+        #  mode: active-backup
         br-prv:
           enabled: true
           type: dpdk_ovs_bridge

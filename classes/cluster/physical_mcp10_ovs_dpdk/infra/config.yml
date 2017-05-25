@@ -118,6 +118,3 @@ parameters:
             tenant_address: ${_param:openstack_compute_node02_tenant_address}
             dpdk0_pci: '"0000:81:00.0"'
             dpdk1_pci: '"0000:81:00.1"'
-            ovs_dpdk_socket_mem: "1024,1024"
-            ovs_pmd_cpu_mask: "'0x780007c00'"
-            ovs_dpdk_lcore_mask: "'0x40000000'"
