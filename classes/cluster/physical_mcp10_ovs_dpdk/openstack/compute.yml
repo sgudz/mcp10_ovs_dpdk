@@ -30,7 +30,7 @@ parameters:
     ovs_pmd_cpu_mask: ${_param:compute_ovs_pmd_cpu_mask}
     ovs_dpdk_lcore_mask: ${_param:compute_ovs_dpdk_lcore_mask}
     sriov_nic01_device_name: ens11f1
-    sriov_nic01_numvfs: 7 
+    sriov_nic01_numvfs: 10 
   neutron:
     compute:
       backend:
@@ -45,8 +45,8 @@ parameters:
           #bond: dpdkbond1
           enabled: true
           type: dpdk_ovs_port
-          n_rxq: "9"
-          pmd_rxq_affinity: "0:11,1:31,2:12,3:32,4:13,5:33,6:14,7:34,8:10"
+          n_rxq: "4"
+          pmd_rxq_affinity: "0:11,1:31,2:12,3:32"
         sriov_nic01_device_name:
           enabled: true
           type: eth
